@@ -1,19 +1,20 @@
-package com.example.myapplication.ui.slideshow
+package com.example.myapplication.presentation.corelogic
+
+import com.example.myapplication.common.Constant.LARGE_PIZZA
+import com.example.myapplication.common.Constant.MEDIUM_PIZZA
+import com.example.myapplication.common.Constant.PIZZA_10_INCH
+import com.example.myapplication.common.Constant.PIZZA_12_INCH
+import com.example.myapplication.common.Constant.PIZZA_15_INCH
+import com.example.myapplication.common.Constant.SMALL_PIZZA
+import com.example.myapplication.common.Constant.discountLPrice
+import com.example.myapplication.common.Constant.largeSizePrice
+import com.example.myapplication.common.Constant.mediumSizePrice
+import com.example.myapplication.common.Constant.smallSizePrice
 
 
-enum class PizzaType {
-    SMALL_PIZZA,
-    MEDIUM_PIZZA,
-    LARGE_PIZZA
-}
-
-data class Pizza(val name: String, val description: String, val retailPrice: Double)
-
-data class Customer(val name: String, val specialPricing: (List<Pizza>) -> Double)
-
-val smallPizza = Pizza("Small Pizza", "10'' pizza for one person", 11.99)
-val mediumPizza = Pizza("Medium Pizza", "12'' Pizza for two persons", 15.99)
-val largePizza = Pizza("Large Pizza", "15'' Pizza for four persons", 21.99)
+val smallPizza = Pizza(SMALL_PIZZA, PIZZA_10_INCH, smallSizePrice)
+val mediumPizza = Pizza(MEDIUM_PIZZA, PIZZA_12_INCH, mediumSizePrice)
+val largePizza = Pizza(LARGE_PIZZA, PIZZA_15_INCH, largeSizePrice)
 
 
 class PizzaCategory constructor() {
@@ -34,12 +35,12 @@ class PizzaCategory constructor() {
             smallPizzaPrice + mediumPizzaPrice + largePizzaPrice
         },
         Customer("Amazon") { items ->
-            val mediumPizzaPrice =  items.count { it == mediumPizza } * mediumPizza.retailPrice
+            val mediumPizzaPrice = items.count { it == mediumPizza } * mediumPizza.retailPrice
             val largePizzaCount = items.count { it == largePizza }
             val smallPizzaPrice = items.count { it == smallPizza } * smallPizza.retailPrice
 
             // Logic for Large pizza while ordered by customer: Amazon
-            val largePizzaPrice = largePizzaCount * 19.99
+            val largePizzaPrice = largePizzaCount * discountLPrice
 
             smallPizzaPrice + mediumPizzaPrice + largePizzaPrice
         },
@@ -81,7 +82,8 @@ class PizzaCategory constructor() {
     }
 
     fun calculateTotalAmount(customerName: String, items: List<Pizza>): Double {
-        val customer = customers.find { it.name == customerName } ?: customers.first { it.name == "default" }
+        val customer =
+            customers.find { it.name == customerName } ?: customers.first { it.name == "default" }
         return customer.specialPricing(items)
     }
 
