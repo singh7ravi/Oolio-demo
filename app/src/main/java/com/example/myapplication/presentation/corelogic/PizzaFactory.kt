@@ -62,21 +62,29 @@ class PizzaCategory constructor() {
     fun getProducts(type: PizzaType, quantity: Int): List<Pizza> {
         val list = mutableListOf<Pizza>()
         var retailsPrice: Double = 0.0;
-        retailsPrice = when (type) {
+        var pizzaType: String
+        var pizzaDesc: String
+         when (type) {
             PizzaType.SMALL_PIZZA -> {
-                11.99
+                pizzaType = SMALL_PIZZA
+                pizzaDesc = PIZZA_10_INCH
+                retailsPrice =  11.99
             }
 
             PizzaType.MEDIUM_PIZZA -> {
-                15.99
+                pizzaType = MEDIUM_PIZZA
+                pizzaDesc = PIZZA_12_INCH
+                retailsPrice = 15.99
             }
 
-            else -> {
-                21.99
+            PizzaType.LARGE_PIZZA  -> {
+                pizzaType = LARGE_PIZZA
+                pizzaDesc = PIZZA_15_INCH
+                retailsPrice = 21.99
             }
         }
         for (i in 1..quantity) {
-            list.add(Pizza("Small Pizza", "10'' pizza for one person", retailsPrice))
+            list.add(Pizza(pizzaType, pizzaDesc, retailsPrice))
         }
         return list
     }
