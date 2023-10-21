@@ -33,7 +33,7 @@ object Constant {
     val pizzaShortDescList = listOf<String>(
         "Choose any 2 of your favorite personal pizza",
         "2 Med Pizza of Choice, 1 Classic Breadstix, 1 Creamy Breadstix, 2 Pepsi Pet Bottles",
-        "",
+        "Pickup & home delivery 24X7 available",
         "Choose any 2 of your favorite medium pizza",
         "Get 4 assorted Flavor Fun Pizzas. Perfect pizza crust topped with exciting new sauces, cheesy dressing & your favorite toppings",
         "Choose from 2 of your favorite personal pizza with new San Fransisco Crust",

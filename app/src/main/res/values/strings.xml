@@ -8,6 +8,13 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Oolio Foods</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_gallery">Orders</string>
+    <string name="menu_slideshow">Payments</string>
+
+    <string-array name="customer">
+        <item>Default</item>
+        <item>Microsoft</item>
+        <item>Amazon</item>
+        <item>Facebook</item>
+    </string-array>
 </resources>

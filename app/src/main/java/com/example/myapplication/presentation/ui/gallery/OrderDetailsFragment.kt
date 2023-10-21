@@ -4,14 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.myapplication.databinding.FragmentGalleryBinding
+import com.example.myapplication.R
+import com.example.myapplication.databinding.FragmentOrderDetailsBinding
 
-class GalleryFragment : Fragment() {
+class OrderDetailsFragment : Fragment() {
 
-    private var _binding: FragmentGalleryBinding? = null
+    private var _binding: FragmentOrderDetailsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,15 +25,21 @@ class GalleryFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View {
         val galleryViewModel =
-                ViewModelProvider(this).get(GalleryViewModel::class.java)
+                ViewModelProvider(this).get(OrderDetailsViewModel::class.java)
 
-        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        _binding = FragmentOrderDetailsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textGallery
-        galleryViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val languages = resources.getStringArray(R.array.customer)
+
+        val spinner: Spinner = binding.spinner
+        val adapter = activity?.let {
+            ArrayAdapter(
+                it,
+                android.R.layout.simple_list_item_1, languages)
         }
+        spinner.adapter = adapter
+
         return root
     }
 
