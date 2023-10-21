@@ -19,7 +19,7 @@ val largePizza = Pizza(LARGE_PIZZA, PIZZA_15_INCH, largeSizePrice)
 
 class PizzaCategory constructor() {
 
-    val customers = listOf(
+    private val customers = listOf(
         Customer("default") { items ->
             items.sumByDouble { it.retailPrice }
         },

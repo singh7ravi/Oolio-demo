@@ -8,7 +8,6 @@ fun main() {
     val customerName04 = "Facebook"
 
     val pizzaCategory = PizzaCategory()
-
              /*
                Note Pizza price and offer amount
                can be change from Constant.kt file
@@ -17,8 +16,8 @@ fun main() {
     val mediumList = pizzaCategory.getProducts(PizzaType.MEDIUM_PIZZA, 5)
     val largeList = pizzaCategory.getProducts(PizzaType.LARGE_PIZZA, 2)
 
-    val total01 = pizzaCategory.calculateTotalAmount(customerName01,smallList + mediumList + largeList)
-    println("Case 0 # $customerName01 Total: $$total01")
+    val totalAmount = pizzaCategory.calculateTotalAmount(customerName01,smallList + mediumList + largeList)
+    println("Case  # $customerName01 Total: $$totalAmount")
 
 
 

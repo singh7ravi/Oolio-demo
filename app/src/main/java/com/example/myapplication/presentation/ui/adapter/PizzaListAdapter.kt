@@ -13,8 +13,10 @@ class PizzaListAdapter (private val items: List<ListItem>) :
     RecyclerView.Adapter<PizzaListAdapter.CustomItemViewHolder>() {
 
     class CustomItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val itemImage: ImageView = itemView.findViewById(R.id.itemImage)
-        val itemName: TextView = itemView.findViewById(R.id.itemName)
+        val itemImage: ImageView = itemView.findViewById(R.id.pizzaImg)
+        val itemName: TextView = itemView.findViewById(R.id.pizzaType)
+        val itemShortDesc: TextView = itemView.findViewById(R.id.pJobProfiletxt)
+        val itemPrice: TextView = itemView.findViewById(R.id.pricetxt)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomItemViewHolder {
@@ -27,6 +29,8 @@ class PizzaListAdapter (private val items: List<ListItem>) :
         val item = items[position]
         holder.itemImage.setImageResource(item.imageResId)
         holder.itemName.text = item.name
+        holder.itemShortDesc.text = item.shortDesc
+        holder.itemPrice.text = item.price
     }
 
     override fun getItemCount(): Int {

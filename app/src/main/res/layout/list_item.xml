@@ -1,21 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp">
 
     <ImageView
-        android:id="@+id/itemImage"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/ic_launcher_foreground" />
+        android:id="@+id/pizzaImg"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/pizza02"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/itemName"
+        android:id="@+id/pizzaType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/pizzaImg"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/pizzaImg"
+        android:maxLines="1"
+        android:text="User Name v8vb8rfvrfer rgergr  rrgrg grg"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/pricetxt"
+        app:layout_constraintStart_toEndOf="@+id/pizzaImg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pJobProfiletxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pizzaType"
+        android:layout_alignLeft="@+id/pizzaType"
+        android:layout_marginTop="5dp"
+        android:maxLines="2"
+        android:text="Oolio food pizza dfvfr  erfri rfrei rfr ererfwe  efewf edfew e  ef"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/pricetxt"
+        app:layout_constraintStart_toStartOf="@+id/pizzaType"
+        app:layout_constraintTop_toBottomOf="@+id/pizzaType" />
+
+
+    <TextView
+        android:id="@+id/pricetxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Item Name"
-        android:textSize="18sp" />
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="11$"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f2f2f2"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/pizzaImg"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
