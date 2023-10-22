@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/pizzaImg" />
 
     <TextView
-        android:id="@+id/pJobProfiletxt"
+        android:id="@+id/shortDescTxt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/pizzaType"
@@ -57,7 +57,7 @@
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/pizzaType"
-        app:layout_constraintTop_toBottomOf="@+id/pJobProfiletxt" />
+        app:layout_constraintTop_toBottomOf="@+id/shortDescTxt" />
 
 
     <TextView
@@ -125,61 +125,61 @@
         app:layout_constraintTop_toBottomOf="@+id/largeSize" />
 
     <TextView
-        android:id="@+id/totalAmount"
+        android:id="@+id/totalAmountTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Final price after discount : "
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="@+id/pizzaType"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <TextView
+        android:id="@+id/totalAmountValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/totalAmountTitle"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+    <EditText
         android:id="@+id/smallSizeInputLayout"
         android:layout_width="150dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         app:layout_constraintBottom_toBottomOf="@+id/smallSize"
         app:layout_constraintStart_toEndOf="@+id/smallSize"
         android:hint="Quantity"
-        app:layout_constraintTop_toTopOf="@+id/smallSize">
+        android:ems="10"
+        android:maxLength="4"
+        android:inputType="number"
+        app:layout_constraintTop_toTopOf="@+id/smallSize"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:digits="0123456789"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/mediumSizeInputLayout"
         android:layout_width="150dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:hint="Quantity"
         app:layout_constraintBottom_toBottomOf="@+id/mediumSize"
         app:layout_constraintStart_toStartOf="@+id/smallSizeInputLayout"
-        app:layout_constraintTop_toTopOf="@+id/mediumSize">
+        app:layout_constraintTop_toTopOf="@+id/mediumSize"
+        android:ems="10"
+        android:maxLength="4"
+        android:inputType="number" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:digits="0123456789"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/largeSizeInputLayout"
         android:layout_width="150dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:hint="Quantity"
-
         app:layout_constraintBottom_toBottomOf="@+id/largeSize"
         app:layout_constraintStart_toStartOf="@+id/smallSizeInputLayout"
-        app:layout_constraintTop_toTopOf="@+id/largeSize">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:digits="0123456789"/>
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toTopOf="@+id/largeSize"
+        android:ems="10"
+        android:maxLength="4"
+        android:inputType="number" />
 </androidx.constraintlayout.widget.ConstraintLayout>

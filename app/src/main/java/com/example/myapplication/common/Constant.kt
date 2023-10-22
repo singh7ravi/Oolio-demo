@@ -16,6 +16,13 @@ object Constant {
     const val largeSizePrice = 21.99
     const val discountLPrice = 19.99
 
+    const val KEY_TITLE = "title"
+    const val KEY_SHORT_DESC = "shortDescription"
+    const val KEY_PRICE = "price"
+    const val KEY_IMG_RES = "imgResource"
+
+    const val validationMessage = "Sorry! Qantity should not be empty."
+
     val pizzaIconsList = listOf<Int>(R.drawable.pizza01, R.drawable.pizza02, R.drawable.pizza03, R.drawable.pizza04, R.drawable.pizza05, R.drawable.pizza06, R.drawable.pizza07, R.drawable.pizza08, R.drawable.pizza09, R.drawable.pizza010, R.drawable.pizza11)
     val pizzaTitleList = listOf<String>(
         "Power Play Deal : 2 Personal Pizzas starting at Rs 299",
